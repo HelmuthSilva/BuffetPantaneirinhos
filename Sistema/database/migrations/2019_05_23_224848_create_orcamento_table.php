@@ -15,6 +15,7 @@ class CreateOrcamentoTable extends Migration
     {
         Schema::create('orcamentos', function (Blueprint $table) {
             $table->increments('id');
+            $table->unsignedInteger('usuario');
             $table->string('nome');
             $table->string('email');
             $table->string('telefone');
@@ -23,7 +24,9 @@ class CreateOrcamentoTable extends Migration
             $table->string('decoracao');
             $table->string('crianca');
             $table->string('observacao');
-            $table->foreign('id')->references('id')->on('users');
+            $table->string('status');
+            $table->string('criado');
+            $table->foreign('usuario')->references('id')->on('users');
             $table->timestamps();
         });
     }

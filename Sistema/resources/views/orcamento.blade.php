@@ -1,8 +1,13 @@
 @extends('layouts.modelo')
 
-@section('conteudo')
 
-    <form>
+@section('conteudo')
+    @navegar()
+
+    @endnavegar
+<div class="col-md-6">
+    <form action="/enviar-orcamento" method="POST">
+    @csrf
     <div class="form-group">
         <label for="formGroupExampleInput">Nome</label>
         <input type="text" name="nome" class="form-control" id="formGroupExampleInput" placeholder="Example input">
@@ -34,11 +39,9 @@
     </div>
 
     <div class="form-group">
-    <label for="exampleFormControlSelect2">Sexo da criança</label>
-    <select multiple class="form-control" name="crianca" id="exampleFormControlSelect2">
-      <option value="masculino">Masculino</option>
-      <option value="feminino">Feminino</option>
-    </select>
+    <label for="exampleFormControlSelect2">Sexo da criança: </label>
+      <input type="radio" name="sexo" value="masculino">Masculino
+      <input type="radio" name="sexo" value="feminino">Feminino
   </div>
 
   <div class="form-group">
@@ -46,6 +49,13 @@
     <textarea name="observacao" class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
   </div>
 
+  <button class="btn btn-success" type="submit">Enviar</button>
+
     </form>
+</div>
+
+    @rodape()
+
+    @endrodape
 
 @endsection

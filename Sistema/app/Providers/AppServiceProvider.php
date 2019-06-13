@@ -21,6 +21,7 @@ class AppServiceProvider extends ServiceProvider
         Blade::component('components.servicos', 'servicos');
         Blade::component('components.masterHead', 'masterHead');
         Blade::component('components.pacoteDetalhado', 'pacote');
+        Blade::component('components.orcamentos', 'orcamentos');
 
     }
 

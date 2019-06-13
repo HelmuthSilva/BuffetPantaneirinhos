@@ -13,6 +13,9 @@
 
 Route::get('/', 'PacoteController@index');
 Route::get('/verpacote/{id}', 'PacoteController@show');
+Route::get('/orcamento', 'OrcamentoController@index');
+Route::post('/enviar-orcamento', 'OrcamentoController@store');
+Route::get('/meus-orcamentos', 'OrcamentoController@orcamentoIndividual');
 
 Route::match(['get', 'post'], '/botman', 'BotManController@handle');
 Route::get('/botman/tinker', 'BotManController@tinker');

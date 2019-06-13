@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+use App\Orcamentos;
+use Auth;
 
 class OrcamentoController extends Controller
 {
@@ -13,7 +16,18 @@ class OrcamentoController extends Controller
      */
     public function index()
     {
-        //
+        return view('orcamento');
+    }
+
+    public function orcamentoIndividual()
+    {
+        $id = Auth::id();
+        $orcamentos = Orcamentos::select('orcamentos.*')
+        ->where('orcamentos.usuario', '=', $id)
+        ->get();
+
+        return view('meusOrcamentos', compact('orcamentos'));
+
     }
 
     /**
@@ -34,7 +48,24 @@ class OrcamentoController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $orcamento = new Orcamentos();
+
+        $orcamento->usuario = Auth::id();
+        $orcamento->nome = $request->input('nome');
+        $orcamento->email = $request->input('email');
+        $orcamento->telefone = $request->input('telefone');
+        $orcamento->data = $request->input('data');
+        $orcamento->convidados = $request->input('convidados');
+        $orcamento->decoracao = $request->input('decoracao');
+        $orcamento->crianca = $request->input('sexo');
+        $orcamento->observacao = $request->input('observacao');
+        $orcamento->status = "Esperando";
+        $orcamento->criado = now();
+
+        $orcamento->save();
+
+        return view('espera');
+        
     }
 
     /**

@@ -13,15 +13,15 @@
           </li>
 
           <li class="nav-item">
-            <a class="nav-link" href="#" style="font-size: 20px">Meus orçamentos</a>
+            <a class="nav-link" href="/meus-orcamentos" style="font-size: 20px">Meus orçamentos</a>
           </li>
 
           <li class="nav-item">
-            <a class="nav-link" href="#" style="font-size: 20px">Fazer orçamento</a>
+            <a class="nav-link" href="/orcamento" style="font-size: 20px">Fazer orçamento</a>
           </li>
 
           <li class="nav-item">
-            <a class="nav-link" href="#" style="font-size: 20px">Pacotes</a>
+            <a class="nav-link" href="#" style="font-size: 20px">Fornecedor</a>
           </li>
 
           <li class="nav-item dropdown">
@@ -44,11 +44,11 @@
 
           @else
           <li class="nav-item">
-            <a class="nav-link" href="#" style="font-size: 20px">Fazer orçamento</a>
+            <a class="nav-link" href="/orcamento" style="font-size: 20px">Fazer orçamento</a>
           </li>
 
           <li class="nav-item">
-            <a class="nav-link" href="#" style="font-size: 20px">Pacotes</a>
+            <a class="nav-link" href="#" style="font-size: 20px">Fornecedor</a>
           </li>
 
           <li class="nav-item">
