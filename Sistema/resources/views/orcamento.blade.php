@@ -5,12 +5,15 @@
     @navegar()
 
     @endnavegar
+
+<h4> Fazer Orçamento </h4>
+
 <div class="col-md-6">
     <form action="/enviar-orcamento" method="POST">
     @csrf
     <div class="form-group">
         <label for="formGroupExampleInput">Nome</label>
-        <input type="text" name="nome" class="form-control" id="formGroupExampleInput" placeholder="Example input">
+        <input type="text" name="nome" class="form-control" id="formGroupExampleInput" placeholder="Seu nome">
     </div>
 
     <div class="form-group">

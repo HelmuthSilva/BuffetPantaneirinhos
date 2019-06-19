@@ -13,7 +13,6 @@
       </div>
     </div>
       <div class="card-body">
-        <a href="#" class="btn btn-success">Contratar</a>
         <a href="/verpacote/{{$id}}" class="btn btn-primary">Ver detalhes</a>
       </div>
   </div>

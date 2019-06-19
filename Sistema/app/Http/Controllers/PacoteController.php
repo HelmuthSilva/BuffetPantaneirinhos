@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Pacotes;
+use Auth;
+use App\User;
 
 class PacoteController extends Controller
 {
@@ -15,8 +17,24 @@ class PacoteController extends Controller
      */
     public function index()
     {
+        $id = Auth::id();
+
+        $role = DB::table('users')
+        ->join('role_user', 'users.id', '=', 'role_user.user_id')
+        ->join('roles', 'role_user.role_id', '=', 'roles.id')
+        ->select('roles.name', 'role_user.user_id')
+        ->where('users.id', '=', $id)
+        ->get();
+
         $pacotes = Pacotes::all();
-        return view('inicial', compact('pacotes'));
+
+        if(count($role) <> 0){
+            if($role[0]->name == "Fornecedor"){
+                return redirect('/fornecedor');
+            }
+        }else{
+            return view('inicial', compact('pacotes'));
+        }
     }
 
     /**

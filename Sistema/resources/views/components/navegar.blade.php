@@ -21,7 +21,7 @@
           </li>
 
           <li class="nav-item">
-            <a class="nav-link" href="#" style="font-size: 20px">Fornecedor</a>
+            <a class="nav-link" href="/fornecedores" style="font-size: 20px">Fornecedores</a>
           </li>
 
           <li class="nav-item dropdown">
@@ -48,7 +48,7 @@
           </li>
 
           <li class="nav-item">
-            <a class="nav-link" href="#" style="font-size: 20px">Fornecedor</a>
+            <a class="nav-link" href="/fornecedores" style="font-size: 20px">Fornecedores</a>
           </li>
 
           <li class="nav-item">
