@@ -29,6 +29,7 @@ class AppServiceProvider extends ServiceProvider
         Blade::component('components.userPagFor', 'userInfoFornecedor');
         Blade::component('components.pacotes', 'pacotes');
         Blade::component('components.fornecedores', 'fornecedores');
+        Blade::component('components.hisfor', 'hisFor');
 
     }
 

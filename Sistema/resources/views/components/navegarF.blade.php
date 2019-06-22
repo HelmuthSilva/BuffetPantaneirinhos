@@ -17,11 +17,7 @@
           </li>
 
           <li class="nav-item">
-            <a class="nav-link" href="#" style="font-size: 20px">Avaliações</a>
-          </li>
-
-          <li class="nav-item">
-            <a class="nav-link" href="#" style="font-size: 20px">Histórico</a>
+            <a class="nav-link" href="/fornecedor-historico/{{$id}}" style="font-size: 20px">Histórico</a>
           </li>
 
           <li class="nav-item dropdown">

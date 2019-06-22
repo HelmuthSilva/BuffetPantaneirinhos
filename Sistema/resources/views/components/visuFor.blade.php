@@ -4,7 +4,6 @@
       <div class="card-body">
         <h5 class="card-title">Média</h5>
         <p class="card-text"> De {{$quantidade}} serviços prestados, a sua média é de {{$media}}. </p>
-        <a href="#" class="btn btn-primary">Ver avaliações</a>
       </div>
     </div>
   </div>
@@ -12,8 +11,8 @@
     <div class="card">
       <div class="card-body">
         <h5 class="card-title">Histórico - {{$servico}}</h5>
-        <p class="card-text"> {{$dia}}</p>
-        <a href="#" class="btn btn-primary">Ver histórico</a>
+        <p class="card-text"> {{$dia}} Serviços prestados</p>
+        <a href="/fornecedor-historico/{{$id}}" class="btn btn-primary">Ver histórico</a>
       </div>
     </div>
   </div>

@@ -13,11 +13,11 @@
 
 Route::get('/', 'PacoteController@index');
 Route::get('/verpacote/{id}', 'PacoteController@show');
-Route::get('/orcamento', 'OrcamentoController@index');
+Route::get('/orcamento', 'OrcamentoController@index')->middleware('auth');
 Route::post('/enviar-orcamento', 'OrcamentoController@store');
-Route::get('/meus-orcamentos', 'OrcamentoController@orcamentoIndividual');
+Route::get('/meus-orcamentos', 'OrcamentoController@orcamentoIndividual')->middleware('auth');
 
-
+Route::get('/fornecedor-historico/{id}', 'FornecedorController@historico');
 Route::get('/user-fornecedor/{id}', 'FornecedorController@mostrarPeloUsuario');
 Route::get('/fornecedores', 'FornecedorController@index');
 Route::get('/fornecedor/{id}', 'FornecedorController@show');
@@ -32,7 +32,6 @@ Route::get('/escolher-fornecedor/{id}/{ident}', 'ContratosController@escolherFor
 Route::get('/final-contrato/{idf}/{idp}/{ido}', 'ContratosController@index');
 Route::post('/concluir-contrato/{iden}', 'ContratosController@store');
 Route::get('/gerar-pdf/{id}', 'ContratosController@pdf');
-Route::get('/pdf/{id}', 'ContratosController@gerarPdf');
 
 Route::get('/avaliar-fornecedor/{id}', 'FornecedorController@avaliacao');
 Route::post('/finalizar-avaliacao/{id}', 'FornecedorController@avaliar');

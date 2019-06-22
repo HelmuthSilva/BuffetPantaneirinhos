@@ -50,6 +50,11 @@ class OrcamentoController extends Controller
     {
         $orcamento = new Orcamentos();
 
+        $obs = $request->input('observacao');
+        if($obs == ""){
+            $obs = "Nenhuma";
+        }
+
         $orcamento->usuario = Auth::id();
         $orcamento->nome = $request->input('nome');
         $orcamento->email = $request->input('email');
@@ -58,7 +63,7 @@ class OrcamentoController extends Controller
         $orcamento->convidados = $request->input('convidados');
         $orcamento->decoracao = $request->input('decoracao');
         $orcamento->crianca = $request->input('sexo');
-        $orcamento->observacao = $request->input('observacao');
+        $orcamento->observacao = $obs;
         $orcamento->status = "Esperando";
         $orcamento->criado = now();
 

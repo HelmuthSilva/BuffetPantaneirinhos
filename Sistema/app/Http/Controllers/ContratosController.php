@@ -9,6 +9,7 @@ use App\Pacotes;
 use App\Fornecedores;
 use App\Contratos;
 use PDF;
+use Auth;
 
 class ContratosController extends Controller
 {
@@ -82,6 +83,13 @@ class ContratosController extends Controller
         $contrato->valor = $iden;
 
         $contrato->save();
+
+        $p = $request->input('orcamento');
+
+        DB::table('orcamentos')
+        ->where('orcamentos.id',$p)
+        ->update(['orcamentos.status' => 'Concluido']);
+
         $id = $contrato->id;
 
         return redirect('gerar-pdf/'.$id);
@@ -112,30 +120,6 @@ class ContratosController extends Controller
         return view('pdfContrato', compact('fornecedor', 'pacote', 'orcamento', 'contrato'));
     }
 
-    public function gerarPdf($id)
-    {
-        $contrato = Contratos::find($id);
-        $idf = $contrato->fornecedor;
-        $ido = $contrato->orcamento;
-        $idp = $contrato->pacote;
-        
-        $fornecedor = Fornecedores::select('users.name', 'fornecedores.*')
-        ->join('users', 'fornecedores.usuario', '=', 'users.id')
-        ->where('fornecedores.id', '=', $idf)
-        ->get();
-
-        $pacote = Pacotes::select('salgados.*', 'bebidas.*', 'pacotes.*')
-        ->join('salgados', 'salgados.id', '=', 'pacotes.salgados')
-        ->join('bebidas', 'bebidas.id', '=', 'pacotes.bebidas')
-        ->where('pacotes.id', '=', $idp)
-        ->get();
-
-        $orcamento = Orcamentos::find($ido);
-
-        $pdf = \PDF::loadView('pdfContrato', compact('orcamento', 'fornecedor', 'pacote', 'contrato'));
-
-        return $pdf->download('orcamento.pdf');
-    }
 
     /**
      * Display the specified resource.

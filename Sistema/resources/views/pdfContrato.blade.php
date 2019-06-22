@@ -1,6 +1,8 @@
 @extends('layouts.modelo')
 
 @section('conteudo')
+  @navegar()
+  @endnavegar
 
 <div id="submit">
   <h4> Dados do usuário </h4>
@@ -119,7 +121,7 @@
         <input type="text" name="valor" class="form-control" id="inputCity" value="{{$pacote[0]->valor}}" disabled="disabled">
       </div>
 </div>
-  <button id="gerarpdf"> Gerar PDF </button>
+  <button class ="btn btn-primary" id="gerarpdf"> Gerar PDF </button>
 
 <script> 
 document.getElementById('gerarpdf').onclick = printDiv       

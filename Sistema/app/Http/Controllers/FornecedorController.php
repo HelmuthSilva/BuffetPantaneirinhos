@@ -210,14 +210,30 @@ class FornecedorController extends Controller
 
         $quant = $fornecedor->solicitada += 1;
 
-        $fornecedor->solicitada = $quant;
         $fornecedor->notas += $nota;
-        $fornecedor->media = $nota/$quant;
+        $fornecedor->media = $fornecedor->notas/$quant;
 
         $fornecedor->save();
 
+        $pessoa = Auth::id();
+
+        DB::table('orcamentos')
+        ->where('orcamentos.usuario', $pessoa)
+        ->update(['orcamentos.status' => 'Encerrado']);
+
         return view('posAvaliacao');
 
+    }
+
+    public function historico($id)
+    {
+        $historico = Fornecedores::select('orcamentos.data', 'fornecedores.usuario', 'orcamentos.nome', 'orcamentos.decoracao', 'contratos.valor')
+        ->join('contratos', 'contratos.fornecedor', '=', 'fornecedores.id')
+        ->join('orcamentos', 'orcamentos.id', '=', 'contratos.orcamento')
+        ->where('fornecedores.usuario', '=', $id)
+        ->get();
+
+        return view('historicoFornecedor', compact('historico'));
     }
 
     /**
@@ -230,4 +246,5 @@ class FornecedorController extends Controller
     {
         //
     }
+
 }

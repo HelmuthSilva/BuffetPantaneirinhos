@@ -36,6 +36,10 @@
 
             @endslot
 
+            @slot('id')
+                {{$fornecedor[0]->usuario}}
+            @endslot
+
         @endvisuFornecedor
     @else
         @navegarF()
