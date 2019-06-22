@@ -15,6 +15,12 @@ class PacoteController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
+    public function justificativa()
+    {
+        return view('justificativa');
+    }
+
     public function index()
     {
         $id = Auth::id();

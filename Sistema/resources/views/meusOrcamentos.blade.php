@@ -42,7 +42,7 @@
                   {{$orcamento->status}}
               @elseif($orcamento->status =="Indeferido")
                  <p>Indeferido</p>
-                 <a href="/justificativa/{{$orcamento->id}}" class="btn btn-info"> Ver justificativa </a>
+                 <a href="/justificativa" class="btn btn-info"> Ver justificativa </a>
               @elseif($orcamento->status =="Concluido")
                  <p>Concluído</p>
                  <a href="/avaliar-fornecedor/{{$orcamento->id}}" class="btn btn-warning"> Avaliar Fornecedor </a>

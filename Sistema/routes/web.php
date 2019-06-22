@@ -12,6 +12,7 @@
 */
 
 Route::get('/', 'PacoteController@index');
+Route::get('/justificativa', 'PacoteController@justificativa');
 Route::get('/verpacote/{id}', 'PacoteController@show');
 Route::get('/orcamento', 'OrcamentoController@index')->middleware('auth');
 Route::post('/enviar-orcamento', 'OrcamentoController@store');
