@@ -25,6 +25,7 @@ class ContratosController extends Controller
         ->where('fornecedores.id', '=', $idf)
         ->get();
 
+        
         $pacote = Pacotes::select('salgados.*', 'bebidas.*', 'pacotes.*')
         ->join('salgados', 'salgados.id', '=', 'pacotes.salgados')
         ->join('bebidas', 'bebidas.id', '=', 'pacotes.bebidas')

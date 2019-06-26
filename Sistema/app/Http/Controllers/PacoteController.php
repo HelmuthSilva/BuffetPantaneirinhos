@@ -16,6 +16,11 @@ class PacoteController extends Controller
      * @return \Illuminate\Http\Response
      */
 
+    public function sobre()
+    {
+        return view('sobre');
+    }
+
     public function justificativa()
     {
         return view('justificativa');

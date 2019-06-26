@@ -13,12 +13,12 @@
     @csrf
     <div class="form-group">
         <label for="formGroupExampleInput">Nome</label>
-        <input type="text" name="nome" class="form-control" id="formGroupExampleInput" placeholder="Seu nome">
+        <input type="text" name="nome" class="form-control" id="formGroupExampleInput" value="{{$user->name}}">
     </div>
 
     <div class="form-group">
         <label for="formGroupExampleInput">E-mail</label>
-        <input type="email" name="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+        <input type="email" name="email" class="form-control" id="exampleFormControlInput1" value="{{$user->email}}">
     </div>
 
     <div class="form-group">

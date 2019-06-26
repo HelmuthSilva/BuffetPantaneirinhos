@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Orcamentos;
 use Auth;
+use App\User;
 
 class OrcamentoController extends Controller
 {
@@ -16,7 +17,9 @@ class OrcamentoController extends Controller
      */
     public function index()
     {
-        return view('orcamento');
+        $id = Auth::id();
+        $user = User::find($id);
+        return view('orcamento', compact('user'));
     }
 
     public function orcamentoIndividual()

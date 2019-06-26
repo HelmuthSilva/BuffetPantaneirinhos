@@ -10,7 +10,7 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-
+Route::get('/about', 'PacoteController@sobre');
 Route::get('/', 'PacoteController@index');
 Route::get('/justificativa', 'PacoteController@justificativa');
 Route::get('/verpacote/{id}', 'PacoteController@show');

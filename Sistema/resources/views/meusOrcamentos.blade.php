@@ -6,6 +6,7 @@
 
 <h5> Meus orçamentos </h5>
 
+<div style="height: 22rem;">
 <center>
 <div class="col-md-9">
 <nav class="navbar navbar-light bg-light">
@@ -60,7 +61,7 @@
         @endforeach
         </div>
         <center>
-
+</div>
     @rodape()
     @endrodape
 @endsection

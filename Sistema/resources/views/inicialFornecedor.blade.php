@@ -4,6 +4,7 @@
 @section('conteudo')
 
 @if(count($fornecedor) <> 0)
+
     @navegarF()
 
         @slot('id')
@@ -13,6 +14,7 @@
     @endnavegarF
         <h4> Olá, {{$fornecedor[0]->name}}</h4>
 
+<div style="height: 22rem;"> 
         @visuFornecedor()
             @slot('quantidade')
                 {{$fornecedor[0]->solicitada}}
@@ -41,6 +43,7 @@
             @endslot
 
         @endvisuFornecedor
+</div>
     @else
         @navegarF()
 
@@ -49,7 +52,7 @@
             @endslot
 
         @endnavegarF
-            <div class="alert alert-success" role="alert">
+            <div class="alert alert-success" role="alert" style="height: 22rem;">
                 <a href="/fornecedor-cadastrar" class="alert-link">Clique aqui</a> para preencher as suas informações.
             </div>
 @endif

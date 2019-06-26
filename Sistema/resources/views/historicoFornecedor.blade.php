@@ -2,6 +2,9 @@
 
 
 @section('conteudo')
+
+@if(count($historico) <> 0 )
+<div style="height: 22rem;">
     @navegarF()
         @slot('id')
             {{$historico[0]->usuario}}
@@ -32,6 +35,18 @@
 
         @endhisFor
     @endforeach
+</div>
+    @else
+
+    @navegarF()
+        @slot('id')
+            {{$id}}
+        @endslot
+    @endnavegarF
+<div style="height: 22rem;">
+    <p> Nenhum serviço prestado ainda.</p>
+</div>
+    @endif
     </div>
     </div>
     </div>

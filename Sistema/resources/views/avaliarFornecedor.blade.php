@@ -4,6 +4,7 @@
     @navegar()
     @endnavegar
 
+<div style="height: 22rem;">
     <h5> Avaliação do fornecedor </h5>
 
         <form action="/finalizar-avaliacao/{{$fornecedor[0]->id}}" method="POST">
@@ -32,7 +33,7 @@
         <button type="submit" class="btn btn-success"> Pronto! </button>
 
         </form>
-
+</div>
     @rodape()
     @endrodape
 @endsection

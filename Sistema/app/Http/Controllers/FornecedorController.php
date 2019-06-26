@@ -233,7 +233,7 @@ class FornecedorController extends Controller
         ->where('fornecedores.usuario', '=', $id)
         ->get();
 
-        return view('historicoFornecedor', compact('historico'));
+        return view('historicoFornecedor', compact('historico', 'id'));
     }
 
     /**

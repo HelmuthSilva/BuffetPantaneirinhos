@@ -4,7 +4,7 @@
     @navegar()
     @endnavegar
 
-    <div class="alert alert-success" role="alert">
+    <div class="alert alert-success" role="alert" style="height:22rem;">
         <h4 class="alert-heading">Orçamento enviado com sucesso!</h4>
         <p>Certo. O orçamento foi enviado, espere o retorno sobre a resposta</p>
         <hr>
